@@ -1,0 +1,15 @@
+<h1>Artists</h1>
+<ul *ngIf="artists.length > 0; else loadingArtists">
+    <!-- <li *ngFor="let artist of artists">{{ artist.name }}</li> -->
+    <div class="artists-container" *ngFor="let artist of artists">
+        <div class="card">
+            <img [src]="artist.image" [alt]="artist.name">
+            <p>{{ artist.name }}</p>
+        </div>
+    </div>
+</ul>
+<ng-template #loadingArtists>
+<p>Loading artists...</p>
+</ng-template>
+
+

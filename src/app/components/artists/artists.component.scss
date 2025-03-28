@@ -1,0 +1,33 @@
+h1, p{
+    color: white;
+}
+
+.artists-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    width: 150px;
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    background-color: #181818;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    aspect-ratio: 1/1; /* Mantiene la imagen cuadrada */
+}
+
+.card p {
+    margin-top: 10px;
+    font-size: 14px;
+}
