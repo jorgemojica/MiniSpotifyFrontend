@@ -5,6 +5,7 @@ export class Playlist{
 
     id?: number;
     name!: string;
+    image?: string;
     user?: User
     tracks?: Track[];
 

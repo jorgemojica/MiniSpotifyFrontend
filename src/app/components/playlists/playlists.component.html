@@ -1,0 +1,14 @@
+<div class="title plb-20">
+    <h2><strong>Playlists</strong></h2>
+</div>
+<div *ngIf="playlists.length > 0; else loadingPlaylists">
+    <div class="col-md-3" *ngFor="let playlist of playlists">
+        <div class="music-card image-container text-center">
+            <img [src]="playlist.image" [alt]="playlist.image">
+             <h4>{{ playlist.name }}</h4>
+        </div>
+    </div>
+</div>
+<ng-template #loadingPlaylists>
+    <p>Loading Playlists...</p>
+</ng-template>

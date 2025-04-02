@@ -7,9 +7,9 @@ import { Artist } from '../models/artist.model';
 })
 export class ArtistsService {
 
-  constructor(private http: HttpClient) { }
-
   url = 'http://localhost:8080/api/artist'
+
+  constructor(private http: HttpClient) { }
 
   getAllArtists(){
     return this.http.get<Artist[]>(this.url);
