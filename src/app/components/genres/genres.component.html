@@ -1,0 +1,13 @@
+<div class="title plb-20">
+    <h2><strong>Genres</strong></h2>
+</div>
+<div *ngIf="this.genres.length > 0; else loadingGenres">
+    <div class="col-md-4" *ngFor="let genre of genres">
+        <div class="music-card image-container text-center">
+            <h4>{{ genre.name }}</h4>
+        </div>
+    </div>
+</div>
+<ng-template #loadingGenres>
+    <p>Loading Genres...</p>
+</ng-template>
