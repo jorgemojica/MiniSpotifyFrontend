@@ -1,0 +1,122 @@
+.artist-page {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #121212;
+  }
+
+  .artist-header {
+    position: relative;
+    background: linear-gradient(to bottom, #555, #121212);
+    padding: 100px 40px;
+    min-height: 500px;
+    // background-image: url('https://images7.alphacoders.com/771/771005.jpg');
+    background-size: cover;
+    background-position: top;
+    border-radius: 10px;
+  }
+  
+  .artist-info {
+    max-width: 600px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .verified {
+    color: #1db954;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .artist-info h1 {
+    font-size: 4rem;
+    margin: 0;
+  }
+  
+  .listeners {
+    color: #b3b3b3;
+    margin: 10px 0 20px;
+    font-size: 1.5rem;
+  }
+  
+  .controls button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  
+  .play-btn {
+    background-color: #1db954;
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  .follow-btn {
+    border: 2px solid white !important;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+    padding: 8px 16px;
+  }
+  
+  .dots-btn {
+    background-color: transparent;
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .artist-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+  }
+  
+  .popular-tracks {
+    width: 50%;
+  }
+  
+  .popular-tracks ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .popular-tracks li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+  }
+  
+  .popular-tracks li img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+  }
+  
+  .artist-pick {
+    width: 30%;
+    background-color: #181818;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .artist-pick .pick {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .artist-pick img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+  }

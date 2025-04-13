@@ -25,3 +25,30 @@
     object-fit: cover;
     border-radius: 50%;
 }
+
+a {
+    text-decoration: none;
+    /* Quita el subrayado */
+    color: inherit;
+    /* Usa el color del elemento padre */
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.music-card {
+    transition: all 0.3s ease-in-out;
+}
+
+.music-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+}
+
+.music-card:hover h4 {
+    color: #1db954;
+    /* verde estilo Spotify */
+    // text-decoration: underline;
+}

@@ -1,0 +1,20 @@
+<div class="artist-page">
+    <div class="artist-header" *ngIf="artist?.image" [style.background-image]="'url(' + artist.image + ')'">
+        <div class="artist-info">
+            <p class="verified">✔ Artista verificado</p>
+            <h1>{{ this.artist.name }}</h1>
+            <div class="controls">
+                <button class="play-btn">▶</button>
+                <button class="follow-btn">Seguir</button>
+            </div>
+        </div>
+    </div>
+    <div class="artist-content">
+        <div class="popular-tracks">
+            <h2>Populares</h2>
+            <ul *ngFor="let art of artist.tracks; index as i;">
+                <li><span>{{ i + 1 }}</span>{{ art.title }}<span>{{ art.duration }}</span></li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -22,7 +22,7 @@ export class PlaylistsComponent implements OnInit {
   getAllPlaylists(){
     this.service.getAllPlaylists().subscribe(data => {
       this.playlists = data;
-      console.log(this.playlists);
+      console.log('Playlists', this.playlists);
     })
   }
 

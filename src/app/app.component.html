@@ -1,84 +1,15 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!-- Sidebar -->
+<app-sidebar></app-sidebar>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spotify</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-</head>
+<main>
 
-<body>
+  <!-- Navbar -->
+  <app-navbar></app-navbar>
 
-  <aside class="sidenav">
-    <div class="logo">
-      <a href="#"><img class="pb-50"
-          src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png" alt=""></a>
-    </div>
-    <div class="menulink">
-      <a href="#"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="#"><i class="fas fa-search"></i> <span>Cerca</span> </a>
-      <a href="#"><i class="fas fa-book pb-50"></i> <span> La tua libreria</span></a>
-    </div>
-    <div class="buttons">
-      <a href="#"><button type="button" class="btn btn-light">Iscriviti</button></a>
-      <a href="#"><button type="button" class="btn btn-dark">Accedi</button></a>
-    </div>
-    <div class="cookie col-md-12 text-center">
-      <div class="col-md-4  col-sm-12 ">
-        <a href="#">Politica sui cookie</a>
-      </div>
-      <div class="col-md-2 col-sm-12"> | </div>
-      <div class="col-md-6 col-sm-12">
-        <a href="#">Privacy</a>
-      </div>
-    </div>
-  </aside>
+  <!-- Rutas -->
+  <router-outlet></router-outlet>
 
-  <main>
-    <div class="container-flex ptb-30 plb-20">
-      <div class=" toplist">
-        <ul class="list-inline">
-          <li><a href="#">in evidenza </a></li>
-          <li><a href="#">podcast</a></li>
-          <li><a href="#">generi e mood</a></li>
-          <li><a href="#">nuove uscite</a></li>
-          <li><a href="#">scopri</a></li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Artists Component -->
-    <div class="container-flex">
-      <div class="col-md-12">
-        <app-artists></app-artists>
-      </div>
-    </div>
+</main>
 
-    <!-- Playlists Component -->
-    <div class="container-flex">
-      <div class="col-md-12">
-        <app-playlists></app-playlists>
-      </div>
-    </div>
-
-  </main>
-
-  <footer>
-    <div class="playmusic text-center">
-      <ul class="list-inline">
-        <li><a href="#"><i class="fas fa-random"></i></a></li>
-        <li><a href="#"><i class="fas fa-step-backward"></i></a></li>
-        <li><a href="#"><i class="far fa-play-circle"></i></a></li>
-        <li><a href="#"><i class="fas fa-step-forward"></i></a></li>
-        <li><a href="#"><i class="fas fa-redo"></i></a></li>
-      </ul>
-    </div>
-
-  </footer>
-</body>
-
-</html>
+<!-- footer -->
+<app-footer></app-footer>

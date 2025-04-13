@@ -7,12 +7,22 @@ import { AppComponent } from './app.component';
 import { ArtistsComponent } from './components/artists/artists.component';
 import { ArtistsService } from './services/artists.service';
 import { PlaylistsComponent } from './components/playlists/playlists.component';
+import { ArtistComponent } from './components/artist/artist.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArtistsComponent,
-    PlaylistsComponent
+    PlaylistsComponent,
+    ArtistComponent,
+    NavbarComponent,
+    FooterComponent,
+    SidebarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
