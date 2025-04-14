@@ -14,6 +14,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HomeComponent } from './components/home/home.component';
 import { TracksComponent } from './components/tracks/tracks.component';
 import { GenresComponent } from './components/genres/genres.component';
+import { CreateArtistComponent } from './components/create-artist/create-artist.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { UpdateArtistComponent } from './components/update-artist/update-artist.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +29,16 @@ import { GenresComponent } from './components/genres/genres.component';
     SidebarComponent,
     HomeComponent,
     TracksComponent,
-    GenresComponent
+    GenresComponent,
+    CreateArtistComponent,
+    UpdateArtistComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [ArtistsService],
   bootstrap: [AppComponent]

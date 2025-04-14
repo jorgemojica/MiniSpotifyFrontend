@@ -15,4 +15,12 @@ export class ArtistService {
     return this.http.get<Artist>(this.url + '/' + id);
   }
 
+  createArtist(artist: Artist){
+    return this.http.post<Artist>(this.url, artist);
+  }
+
+  updateArtist(id: string, artist: Artist){
+    return this.http.put<Artist>(this.url + '/' + id, artist);
+  }
+
 }

@@ -5,7 +5,7 @@
     <div class="col-md-3" *ngFor="let artist of artists">
         <div class="music-card image-container text-center">
             <a [routerLink]="'/artist/' + artist.id">
-                <img [src]="artist.image" [alt]="artist.name">
+                <img [src]="artist.image || 'assets/images/DefaultImg.webp'" [alt]="artist.name" (error)="onImageError($event)">
                 <h4>{{ artist.name }}</h4>
             </a>
         </div>

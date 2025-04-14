@@ -6,6 +6,8 @@ import { HomeComponent } from './components/home/home.component';
 import { PlaylistsComponent } from './components/playlists/playlists.component';
 import { TracksComponent } from './components/tracks/tracks.component';
 import { GenresComponent } from './components/genres/genres.component';
+import { CreateArtistComponent } from './components/create-artist/create-artist.component';
+import { UpdateArtistComponent } from './components/update-artist/update-artist.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'artist/:id', component: ArtistComponent },
   { path: 'tracks', component: TracksComponent },
   { path: 'genres', component: GenresComponent },
-  { path: 'playlists', component: PlaylistsComponent }
+  { path: 'playlists', component: PlaylistsComponent },
+  { path: 'create-artist', component: CreateArtistComponent },
+  { path: 'update-artist/:id', component: UpdateArtistComponent }
 ];
 
 @NgModule({

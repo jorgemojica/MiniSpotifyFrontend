@@ -11,19 +11,24 @@ export class ArtistsComponent implements OnInit {
 
   artists: Artist[] = [];
 
-  constructor(private service: ArtistsService){
-    
+  constructor(private service: ArtistsService) {
+
   }
 
   ngOnInit(): void {
     this.getAllArtists();
   }
 
-  getAllArtists(){
+  getAllArtists() {
     this.service.getAllArtists().subscribe(data => {
       this.artists = data;
       console.log('Artistas', this.artists);
     });
+  }
+
+  onImageError(event: Event) {
+    const img = event.target as HTMLImageElement;
+    img.src = 'assets/images/DefaultImg.webp';
   }
 
 }
