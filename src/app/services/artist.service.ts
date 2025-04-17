@@ -23,4 +23,8 @@ export class ArtistService {
     return this.http.put<Artist>(this.url + '/' + id, artist);
   }
 
+  deleteArtist(id: number){
+    return this.http.delete(this.url + '/' + id, { responseType: 'text' });
+  }
+
 }

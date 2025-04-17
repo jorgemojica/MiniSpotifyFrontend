@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Artist } from 'src/app/models/artist.model';
 import { ArtistService } from 'src/app/services/artist.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-artist',
@@ -18,7 +18,7 @@ export class ArtistComponent implements OnInit {
     image: ''
   };
 
-  constructor(private service: ArtistService, private route: ActivatedRoute) { }
+  constructor(private service: ArtistService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.artistId = this.route.snapshot.paramMap.get('id') || '';
@@ -30,6 +30,22 @@ export class ArtistComponent implements OnInit {
       this.artist = data;
       console.log(this.artist);
     })
+  }
+
+  deleteArtist() {
+    console.log('elimino con id', typeof(this.artistId));
+    var confirmed = window.confirm(`Are you sure you want to delete ${this.artist.name}?`);
+    if (confirmed) {
+      this.service.deleteArtist(parseInt(this.artistId)).subscribe({
+        next: (message) => {
+          alert(message);
+          this.router.navigate(['/artists']);
+        },
+        error: (error) => {
+          alert(error);
+        }
+      })
+    }
   }
 
 }
