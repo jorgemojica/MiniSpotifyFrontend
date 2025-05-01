@@ -3,6 +3,35 @@
     padding-bottom: 30px;
 }
 
+.align{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.download-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .download-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .download-btn:active {
+    background-color: #3e8e41;
+  }
+  
+
 .music-card {
     padding-bottom: 30px;
 }

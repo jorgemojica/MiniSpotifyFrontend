@@ -1,11 +1,12 @@
-<div class="title plb-20">
+<div class="title plb-20 align">
     <h2><strong>Artists</strong></h2>
+    <button (click)="getArtistsReport()" class="download-btn"><i class="fa fa-file-pdf" aria-hidden="true"></i> Download Report</button>
 </div>
 <div *ngIf="artists.length > 0; else loadingArtists">
     <div class="col-md-3" *ngFor="let artist of artists">
         <div class="music-card image-container text-center">
             <a [routerLink]="'/artist/' + artist.id">
-                <img [src]="artist.image || 'assets/images/DefaultImg.webp'" [alt]="artist.name" (error)="onImageError($event)">
+                <img [src]="artist.images?.[0]?.url || 'assets/images/DefaultImg.webp'" [alt]="artist.name" (error)="onImageError($event)">
                 <h4>{{ artist.name }}</h4>
             </a>
         </div>
