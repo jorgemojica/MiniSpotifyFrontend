@@ -1,11 +1,12 @@
 <div class="artist-page">
-    <div class="artist-header" *ngIf="artist?.image" [style.background-image]="'url(' + artist.image + ')'">
+    <div class="artist-header">
+        <img [src]="artist.image" alt="Artist image" class="artist-img">
         <div class="artist-info">
             <p class="verified">✔ Artista verificado</p>
             <h1>{{ this.artist.name }}</h1>
             <div class="controls">
-                <button class="play-btn">▶</button>
                 <button class="follow-btn">Seguir</button>
+                <button class="play-btn">▶</button>
                 <button [routerLink]="['/update-artist/' + artist.id]" class="edit-btn">✏️</button>
                 <button (click)="deleteArtist()" class="delete-btn">🗑️</button>
             </div>

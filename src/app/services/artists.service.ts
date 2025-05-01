@@ -13,14 +13,14 @@ export class ArtistsService {
   constructor(private http: HttpClient) { }
 
   // Local Database Artists
-  // getAllArtists(){
-  //   return this.http.get<Artist[]>(this.url);
-  // }
+  getAllArtists(){
+    return this.http.get<Artist[]>(this.url);
+  }
 
   // Spotify Database Artists
-  getAllArtists(ids: string[], headers: HttpHeaders, params: HttpParams){
-    return this.http.get<{ artists: Artist[] }>(this.spotifyUrl, { headers, params });
-  }
+  // getAllArtists(ids: string[], headers: HttpHeaders, params: HttpParams){
+  //   return this.http.get<{ artists: Artist[] }>(this.spotifyUrl, { headers, params });
+  // }
 
   getArtistsReport(){
     return this.http.get(this.url + '/report', { responseType: 'blob' });

@@ -6,20 +6,26 @@
 
 .artist-header {
   position: relative;
-  background: linear-gradient(to bottom, #555, #121212);
-  padding: 100px 40px;
-  min-height: 500px;
-  // background-image: url('https://images7.alphacoders.com/771/771005.jpg');
-  background-size: cover;
-  background-position: top;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #000; /* opcional */
   border-radius: 10px;
+}
+
+.artist-img {
+  height: 120%;
+  width: 70%;
+  // object-fit: contain;
 }
 
 .artist-info {
   max-width: 600px;
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 5px;
+  left: 253px;
   color: white;
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.4);
