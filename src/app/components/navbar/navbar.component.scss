@@ -86,3 +86,57 @@ a:hover {
     border: none;
     padding: 0;
 }
+
+.right-link {
+    position: absolute;
+    right: 20px;
+}
+
+.right-link ul {
+    display: flex;
+    list-style: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+    .dropbtn {
+        background-color: #3498db;
+        color: white;
+        padding: 10px 18px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        user-select: none;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        margin-top: 5px;
+        z-index: 1000;
+
+        a {
+            display: block;
+            padding: 10px 16px;
+            color: black;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:hover {
+                background-color: #f1f1f1;
+            }
+        }
+    }
+}

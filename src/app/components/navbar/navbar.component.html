@@ -1,9 +1,29 @@
 <div class="container-flex ptb-30 plb-20">
     <div class="toplist">
-        <ul class="list-inline">
-            <li><a href="#">{{ 'Subscriptions' | uppercase }}</a></li>
-            <li><a href="#">{{ 'Sing Up' | uppercase }}</a></li>
-            <li><a href="#">{{ 'Login' | uppercase }}</a></li>
-        </ul>
+        <div class="center-links">
+            <ul class="list-inline">
+                <li><a href="#">{{ 'Subscriptions' | uppercase }}</a></li>
+                <li><a href="#">{{ 'Sing Up' | uppercase }}</a></li>
+                <li *ngIf="!this.isAuthenticated"><a href="#">{{ 'Login' | uppercase }}</a></li>
+            </ul>
+        </div>
+        <div class="right-link">
+            <ul class="list-inline">
+                <nav>
+                    <div *ngIf="this.isAuthenticated" class="dropdown" (document:click)="closeUserMenu()"
+                        (click)="$event.stopPropagation()">
+                        <button class="dropbtn" (click)="toggleUserMenu()">{{ userName }} ▼</button>
+                        <div class="dropdown-content" *ngIf="isUserMenuOpen">
+                            <a href="#" (click)="closeUserMenu()">Perfil</a>
+                            <a href="#" (click)="logout()">Cerrar sesión</a>
+                        </div>
+                    </div>
+
+                    <div *ngIf="!isAuthenticated">
+                        <a href="/login">Iniciar sesión</a>
+                    </div>
+                </nav>
+            </ul>
+        </div>
     </div>
 </div>

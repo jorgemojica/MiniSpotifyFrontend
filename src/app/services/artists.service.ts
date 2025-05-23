@@ -8,7 +8,7 @@ import { Artist } from '../models/artist.model';
 export class ArtistsService {
 
   url = 'http://localhost:8080/api/artist';
-  spotifyUrl = 'https://api.spotify.com/v1/artists';
+  //spotifyUrl = 'https://api.spotify.com/v1/artists';
 
   constructor(private http: HttpClient) { }
 

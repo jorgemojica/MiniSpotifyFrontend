@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArtistsComponent } from './components/artists/artists.component';
@@ -17,6 +17,10 @@ import { GenresComponent } from './components/genres/genres.component';
 import { CreateArtistComponent } from './components/create-artist/create-artist.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UpdateArtistComponent } from './components/update-artist/update-artist.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthLayoutComponent } from './components/layouts/auth-layout/auth-layout.component';
+import { MainLayoutComponent } from './components/layouts/main-layout/main-layout.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,10 @@ import { UpdateArtistComponent } from './components/update-artist/update-artist.
     TracksComponent,
     GenresComponent,
     CreateArtistComponent,
-    UpdateArtistComponent
+    UpdateArtistComponent,
+    LoginComponent,
+    AuthLayoutComponent,
+    MainLayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +47,14 @@ import { UpdateArtistComponent } from './components/update-artist/update-artist.
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [ArtistsService],
+  providers: [
+    ArtistsService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
