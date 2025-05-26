@@ -21,6 +21,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthLayoutComponent } from './components/layouts/auth-layout/auth-layout.component';
 import { MainLayoutComponent } from './components/layouts/main-layout/main-layout.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     UpdateArtistComponent,
     LoginComponent,
     AuthLayoutComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

@@ -4,37 +4,37 @@
             <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png"
                 alt="Spotify Logo" />
         </div>
-        <h2 class="title">Inicia sesión en Spotify</h2>
+        <h2 class="title">Login Spotify</h2>
 
         <div class="social-login">
-            <button class="social-btn"><i class="fab fa-google"></i> &nbsp; Continuar con Google</button>
+            <button class="social-btn"><i class="fab fa-google"></i> &nbsp; Login With Google</button>
         </div>
 
         <hr class="divider" />
 
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <label for="email" class="input-label">Nombre de usuario</label>
+            <label for="email" class="input-label">Username</label>
             <input type="text" id="email" formControlName="username"
-                placeholder="Nombre de usuario" class="input-field" />
+                placeholder="Username" class="input-field" />
             <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error">
-                El usuario es requerido.
+                User is required.
             </div>
 
-            <label for="password" class="input-label">Contraseña</label>
-            <input type="password" id="password" formControlName="password" placeholder="Contraseña"
+            <label for="password" class="input-label">Password</label>
+            <input type="password" id="password" formControlName="password" placeholder="Password"
                 class="input-field" />
             <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error">
-                La contraseña es requerida.
+                Password is required.
             </div>
 
             <div *ngIf="errorMessage" class="alert alert-danger center">{{ errorMessage }}</div>
 
-            <button type="submit" class="login-btn" [disabled]="loginForm.invalid">Continuar</button>
+            <button type="submit" class="login-btn" [disabled]="loginForm.invalid">Continue</button>
         </form>
 
         <p class="signup-link">
-            ¿No tienes cuenta?
-            <a routerLink="/register">Suscríbete a Spotify</a>
+            ¿Aren't you registered?
+            <a routerLink="/signup">Subscribe to Spotify</a>
         </p>
     </div>
 </div>

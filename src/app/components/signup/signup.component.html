@@ -1,0 +1,49 @@
+<div class="login-container">
+    <div class="login-box">
+        <div class="logo">
+            <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png"
+                alt="Spotify Logo" />
+        </div>
+        <h2 class="title">Sign Up Spotify</h2>
+
+        <hr class="divider" />
+
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <label for="username" class="input-label">Username</label>
+            <input type="text" id="username" formControlName="username" placeholder="Username" class="input-field" />
+            <div *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched" class="error">
+                User is required.
+            </div>
+
+            <label for="password" class="input-label">Password</label>
+            <input type="password" id="password" formControlName="password" placeholder="Password"
+                class="input-field" />
+            <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="error">
+                Password is required.
+            </div>
+
+            <label for="email" class="input-label">Email</label>
+            <input type="email" id="email" formControlName="email" placeholder="Email" class="input-field" />
+            <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="error">
+                Email is required.
+            </div>
+
+            <label for="role" class="input-label">Role</label>
+            <select id="role" formControlName="role" class="input-field">
+                <option value="" disabled selected>Select a role</option>
+                <option value="ROLE_ADMIN">Admin</option>
+                <option value="ROLE_USER">User</option>
+            </select>
+            <div *ngIf="signupForm.get('role')?.invalid && signupForm.get('role')?.touched" class="error">
+                Role is required.
+            </div>
+
+            <button type="submit" class="login-btn" [disabled]="signupForm.invalid">Continue</button>
+
+            <p class="signup-link">
+                <a routerLink="/login">Login</a>
+            </p>
+        </form>
+
+    </div>
+</div>

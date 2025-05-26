@@ -1,5 +1,5 @@
 import { Playlist } from "./Playlist.model";
-import { Subscription } from "./Subscription.model";
+import { Subscription } from "./subscription.model";
 
 export class User{
 
@@ -7,14 +7,16 @@ export class User{
     username!: string;
     password!: string;
     email!: string;
-    subscription!: Subscription;
+    role!: string;
+    // subscription!: Subscription;
     playlists?: Playlist[];
 
-    constructor(username: string, password: string, email: string, subscription: Subscription, playlists: Playlist[]){
+    constructor(username: string, password: string, email: string, role: string, /*subscription: Subscription,*/ playlists: Playlist[]){
         this.username = username;
         this.password = password;
         this.email = email;
-        this.subscription = subscription;
+        this.role = role;
+        // this.subscription = subscription;
         this.playlists = playlists;
     }
 

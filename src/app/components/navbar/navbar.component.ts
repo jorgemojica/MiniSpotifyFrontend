@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit{
 
   loadUsername(){
     this.userName = localStorage.getItem('username') ?? '';
-    console.log('username: ', this.userName);
+    localStorage.removeItem('username');
   }
 
   toggleUserMenu() {

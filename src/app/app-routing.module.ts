@@ -11,6 +11,7 @@ import { UpdateArtistComponent } from './components/update-artist/update-artist.
 import { LoginComponent } from './components/login/login.component';
 import { AuthLayoutComponent } from './components/layouts/auth-layout/auth-layout.component';
 import { MainLayoutComponent } from './components/layouts/main-layout/main-layout.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 // const routes: Routes = [
 //   { path: '', component: HomeComponent },
@@ -50,7 +51,7 @@ const routes: Routes = [
     component: AuthLayoutComponent,
     children: [
       { path: 'login', component: LoginComponent },
-      // { path: 'signup', component: SignupComponent }
+      { path: 'signup', component: SignupComponent }
     ]
   },
   { path: '**', redirectTo: '/login' }
