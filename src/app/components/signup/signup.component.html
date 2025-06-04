@@ -9,6 +9,13 @@
         <hr class="divider" />
 
         <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+            <label for="name" class="input-label">Name</label>
+            <input type="text" id="name" formControlName="name" placeholder="Name" class="input-field" />
+            <div *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched" class="error">
+                Name is required.
+            </div>
+
             <label for="username" class="input-label">Username</label>
             <input type="text" id="username" formControlName="username" placeholder="Username" class="input-field" />
             <div *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched" class="error">
@@ -36,6 +43,12 @@
             </select>
             <div *ngIf="signupForm.get('role')?.invalid && signupForm.get('role')?.touched" class="error">
                 Role is required.
+            </div>
+
+            <label for="image" class="input-label">Image URL</label>
+            <input type="text" id="image" formControlName="image" placeholder="Image URL" class="input-field" />
+            <div *ngIf="signupForm.get('image')?.invalid && signupForm.get('image')?.touched" class="error">
+                Image URL is required.
             </div>
 
             <button type="submit" class="login-btn" [disabled]="signupForm.invalid">Continue</button>

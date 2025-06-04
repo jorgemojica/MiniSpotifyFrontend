@@ -12,21 +12,15 @@ import { SignupService } from 'src/app/services/signup.service';
 export class SignupComponent {
 
   signupForm: FormGroup;
-  user: User = {
-    username: '',
-    password: '',
-    email: '',
-    name: '',
-    image: '',
-    role: ''
-  }
 
   constructor(private fb: FormBuilder, private service: SignupService, private router: Router) {
     this.signupForm = this.fb.group({
+      name: ['', Validators.required],
       username: ['', Validators.required],
       password: ['', Validators.required],
       email: ['', Validators.required],
-      role: ['', Validators.required]
+      role: ['', Validators.required],
+      image: ['', [Validators.required, Validators.pattern('https?://.+')]],
     })
   }
 
