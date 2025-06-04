@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthLayoutComponent } from './components/layouts/auth-layout/auth-layout.component';
 import { MainLayoutComponent } from './components/layouts/main-layout/main-layout.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 // const routes: Routes = [
 //   { path: '', component: HomeComponent },
@@ -43,7 +44,8 @@ const routes: Routes = [
       { path: 'genres', component: GenresComponent },
       { path: 'playlists', component: PlaylistsComponent },
       { path: 'create-artist', component: CreateArtistComponent },
-      { path: 'update-artist/:id', component: UpdateArtistComponent }
+      { path: 'update-artist/:id', component: UpdateArtistComponent },
+      { path: 'profile', component: ProfileComponent }
     ]
   },
   {

@@ -6,27 +6,27 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit{
+export class NavbarComponent implements OnInit {
 
   isAuthenticated: boolean = false;
   isUserMenuOpen: boolean = false;
   userName: string = '';
 
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.validateAuth();
     this.loadUsername();
   }
 
-  validateAuth(){
+  validateAuth() {
     var token = localStorage.getItem('token');
     this.isAuthenticated = token == '' || token == null ? false : true;
   }
 
-  loadUsername(){
+  loadUsername() {
     this.userName = localStorage.getItem('username') ?? '';
-    localStorage.removeItem('username');
+    // localStorage.removeItem('username');
   }
 
   toggleUserMenu() {

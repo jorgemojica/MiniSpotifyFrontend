@@ -22,6 +22,7 @@ import { AuthLayoutComponent } from './components/layouts/auth-layout/auth-layou
 import { MainLayoutComponent } from './components/layouts/main-layout/main-layout.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { SignupComponent } from './components/signup/signup.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { SignupComponent } from './components/signup/signup.component';
     LoginComponent,
     AuthLayoutComponent,
     MainLayoutComponent,
-    SignupComponent
+    SignupComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

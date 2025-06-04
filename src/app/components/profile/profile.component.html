@@ -1,0 +1,37 @@
+<div class="form-container">
+    <h2>My Profile</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="userForm" novalidate>
+
+        <div class="form-group text-center">
+            <img [src]="this.userImage" alt="User image" class="image-container">
+        </div>
+
+        <div class="form-group">
+            <label for="image">Image URL</label>
+            <input id="image" type="text" formControlName="image" />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="text" formControlName="email" />
+        </div>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" formControlName="name" />
+        </div>
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" type="text" formControlName="username" readonly />
+        </div>
+
+        <div class="form-group">
+            <label for="role">Role</label>
+            <input id="role" type="text" formControlName="role" readonly />
+        </div>
+
+        <button type="submit" [disabled]="userForm.invalid">Edit</button>
+         <!-- <button type="submit">Edit</button> -->
+    </form>
+</div>

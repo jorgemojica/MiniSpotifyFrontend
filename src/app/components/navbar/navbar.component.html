@@ -14,8 +14,8 @@
                         (click)="$event.stopPropagation()">
                         <button class="dropbtn" (click)="toggleUserMenu()">{{ userName }} ▼</button>
                         <div class="dropdown-content" *ngIf="isUserMenuOpen">
-                            <a href="#" (click)="closeUserMenu()">Perfil</a>
-                            <a href="#" (click)="logout()">Cerrar sesión</a>
+                            <a routerLink="/profile">Profile</a>
+                            <a href="#" (click)="logout()">Logout</a>
                         </div>
                     </div>
 
