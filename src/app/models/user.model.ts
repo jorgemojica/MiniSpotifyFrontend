@@ -9,7 +9,7 @@ export class User {
     email!: string;
     name!: string;
     image!: string;
-    role?: string;
+    roles?: string[];
     // subscription!: Subscription;
     playlists?: Playlist[];
 

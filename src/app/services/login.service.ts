@@ -12,7 +12,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  login(credentials: Login){
+  login(credentials: Login) {
     return this.http.post<LoginResponse>(this.url, credentials);
   }
 

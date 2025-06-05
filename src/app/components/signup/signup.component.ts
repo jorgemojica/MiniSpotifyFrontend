@@ -19,14 +19,16 @@ export class SignupComponent {
       username: ['', Validators.required],
       password: ['', Validators.required],
       email: ['', Validators.required],
-      role: ['', Validators.required],
+      roles: ['', Validators.required],
       image: ['', [Validators.required, Validators.pattern('https?://.+')]],
     })
   }
 
   onSubmit() {
     if (this.signupForm.valid) {
-      const user: User = this.signupForm.value;
+      var user: User = this.signupForm.value;
+      var roles = this.signupForm.value.roles;
+      user.roles = [roles];
       this.service.createUser(user).subscribe(
         (response) => {
           console.log('User saved! ', user);

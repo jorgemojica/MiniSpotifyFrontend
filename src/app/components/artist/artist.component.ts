@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Artist } from 'src/app/models/artist.model';
 import { ArtistService } from 'src/app/services/artist.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-artist',
@@ -11,16 +12,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ArtistComponent implements OnInit {
 
   artistId: string = '';
-
   artist: Artist = {
     name: '',
     country: '',
     image: ''
   };
+  isRoleAdmin: boolean = false;
 
-  constructor(private service: ArtistService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private service: ArtistService, private route: ActivatedRoute, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.isRoleAdmin = this.authService.isRoleAdmin();
     this.artistId = this.route.snapshot.paramMap.get('id') || '';
     this.getArtist(this.artistId);
   }

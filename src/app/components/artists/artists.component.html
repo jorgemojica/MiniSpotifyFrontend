@@ -1,6 +1,6 @@
 <div class="title plb-20 align">
     <h2><strong>Artists</strong></h2>
-    <button (click)="getArtistsReport()" class="download-btn"><i class="fa fa-file-pdf" aria-hidden="true"></i> Download Report</button>
+    <button *ngIf="this.isRoleAdmin" (click)="getArtistsReport()" class="download-btn"><i class="fa fa-file-pdf" aria-hidden="true"></i> Download Report</button>
 </div>
 <div *ngIf="artists.length > 0; else loadingArtists">
     <div class="col-md-3" *ngFor="let artist of artists">

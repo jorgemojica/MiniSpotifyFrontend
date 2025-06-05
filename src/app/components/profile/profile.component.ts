@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit {
           username: response.username,
           email: response.email,
           name: response.name,
-          role: response.role == "ROLE_ADMIN" ? "Admin" : "User"
+          role: response.roles?.[0] == "ROLE_ADMIN" ? "Admin" : "User"
         })
       },
       (error) => {

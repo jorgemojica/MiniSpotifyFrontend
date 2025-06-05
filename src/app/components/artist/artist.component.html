@@ -7,8 +7,8 @@
             <div class="controls">
                 <button class="follow-btn">Seguir</button>
                 <button class="play-btn">▶</button>
-                <button [routerLink]="['/update-artist/' + artist.id]" class="edit-btn">✏️</button>
-                <button (click)="deleteArtist()" class="delete-btn">🗑️</button>
+                <button *ngIf="this.isRoleAdmin" [routerLink]="['/update-artist/' + artist.id]" class="edit-btn">✏️</button>
+                <button *ngIf="this.isRoleAdmin" (click)="deleteArtist()" class="delete-btn">🗑️</button>
             </div>
         </div>
     </div>
