@@ -7,7 +7,8 @@
             <div class="controls">
                 <button class="follow-btn">Seguir</button>
                 <button class="play-btn">▶</button>
-                <button *ngIf="this.isRoleAdmin" [routerLink]="['/update-artist/' + artist.id]" class="edit-btn">✏️</button>
+                <button *ngIf="this.isRoleAdmin" [routerLink]="['/update-artist/' + artist.id]"
+                    class="edit-btn">✏️</button>
                 <button *ngIf="this.isRoleAdmin" (click)="deleteArtist()" class="delete-btn">🗑️</button>
             </div>
         </div>
@@ -15,9 +16,15 @@
     <div class="artist-content">
         <div class="popular-tracks">
             <h2>Populares</h2>
-            <ul *ngFor="let art of artist.tracks; index as i;">
-                <li><span>{{ i + 1 }}</span>{{ art.title }}<span>{{ art.duration }}</span></li>
-            </ul>
+            <div class="track-row" *ngFor="let art of artist.tracks; index as i" (mouseenter)="hoveredIndex = i"
+                (mouseleave)="hoveredIndex = null" (click)="getTrackName(art.title)">
+                <div class="col index-cell">
+                    <span *ngIf="hoveredIndex !== i">{{ i + 1 }}</span>
+                    <span *ngIf="hoveredIndex === i">▶</span>
+                </div>
+                <div class="col title">{{ art.title }}</div>
+                <div class="col duration">{{ art.duration }}</div>
+            </div>
         </div>
     </div>
 </div>

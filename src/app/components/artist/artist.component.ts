@@ -3,6 +3,7 @@ import { Artist } from 'src/app/models/artist.model';
 import { ArtistService } from 'src/app/services/artist.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { AudioPlayerService } from 'src/app/services/audio-player.service';
 
 @Component({
   selector: 'app-artist',
@@ -18,8 +19,10 @@ export class ArtistComponent implements OnInit {
     image: ''
   };
   isRoleAdmin: boolean = false;
+  hoveredIndex: number | null = null;
 
-  constructor(private service: ArtistService, private route: ActivatedRoute, private router: Router, private authService: AuthService) { }
+  constructor(private service: ArtistService, private route: ActivatedRoute, private router: Router,
+    private authService: AuthService, private audioPlayerService: AudioPlayerService) { }
 
   ngOnInit(): void {
     this.isRoleAdmin = this.authService.isRoleAdmin();
@@ -35,7 +38,7 @@ export class ArtistComponent implements OnInit {
   }
 
   deleteArtist() {
-    console.log('elimino con id', typeof(this.artistId));
+    console.log('elimino con id', typeof (this.artistId));
     var confirmed = window.confirm(`Are you sure you want to delete ${this.artist.name}?`);
     if (confirmed) {
       this.service.deleteArtist(parseInt(this.artistId)).subscribe({
@@ -48,6 +51,10 @@ export class ArtistComponent implements OnInit {
         }
       })
     }
+  }
+
+  getTrackName(trackName: string) {
+    this.audioPlayerService.setTrackTitle(trackName);
   }
 
 }

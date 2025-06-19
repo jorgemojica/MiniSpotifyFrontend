@@ -11,14 +11,13 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-color: #000; /* opcional */
+  background-color: #000;
   border-radius: 10px;
 }
 
 .artist-img {
   height: 120%;
   width: 70%;
-  // object-fit: contain;
 }
 
 .artist-info {
@@ -44,12 +43,6 @@
   margin: 0;
 }
 
-.listeners {
-  color: #b3b3b3;
-  margin: 10px 0 20px;
-  font-size: 1.5rem;
-}
-
 .controls button {
   margin-right: 10px;
   padding: 10px 20px;
@@ -64,9 +57,12 @@
   color: white;
 }
 
+.play-btn:hover {
+  background-color: #45a049;
+}
+
 .edit-btn {
   background-color: #4CAF50;
-  /* verde */
   border: none;
   border-radius: 5px;
   color: white;
@@ -82,7 +78,6 @@
 
 .delete-btn {
   background-color: #ff4d4d;
-  /* rojo suave */
   border: none;
   border-radius: 5px;
   color: white;
@@ -94,7 +89,6 @@
 
 .delete-btn:hover {
   background-color: #e60000;
-  /* rojo más fuerte */
 }
 
 .follow-btn {
@@ -105,12 +99,6 @@
   padding: 8px 16px;
 }
 
-.dots-btn {
-  background-color: transparent;
-  color: white;
-  font-size: 1.5rem;
-}
-
 .artist-content {
   display: flex;
   justify-content: space-between;
@@ -118,44 +106,63 @@
 }
 
 .popular-tracks {
-  width: 50%;
+  width: 100%;
 }
 
-.popular-tracks ul {
-  list-style: none;
-  padding: 0;
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.popular-tracks li {
+tr {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.index-cell {
+  width: 100px;
+  text-align: center;
+  font-weight: bold;
+  color: #1db954;
+}
+
+tr:hover {
+  background-color: #f0f0f0;
+}
+
+.track-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #333;
-}
-
-.popular-tracks li img {
-  width: 40px;
-  height: 40px;
-  margin: 0 10px;
-}
-
-.artist-pick {
+  padding: 10px 16px;
   width: 30%;
-  background-color: #181818;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.artist-pick .pick {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.artist-pick img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
+  cursor: pointer;
   border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.track-row:hover {
+  background-color: #3b3939;
+}
+
+.col {
+  padding: 0 12px;
+}
+
+.index-cell {
+  width: 40px;
+  text-align: center;
+  font-weight: bold;
+  color: #1db954;
+}
+
+.title {
+  flex: 0.9;
+  font-size: 16px;
+}
+
+.duration {
+  width: 60px;
+  text-align: right;
+  color: #999;
 }
